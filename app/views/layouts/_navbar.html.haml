@@ -1,0 +1,10 @@
+%nav.navbar.navbar-dark.navbar-static-top.navbar-expand-md
+  .container
+    %button.navbar-toggler.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+      %span.sr-only Toggle navigation
+    = link_to "User Page", user_path(id: 1), class: 'navbar-brand'
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav.mr-auto
+        %li.nav-item= link_to 'Users', users_path(), class: 'nav-link'
+        %li.nav-item= link_to 'Orders', orders_path(user_id: 1, page: 1), class: 'nav-link'
+        %li.nav-item= link_to 'Docs', '/docs/index.html', class: 'nav-link'

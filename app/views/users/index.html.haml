@@ -1,0 +1,27 @@
+= stylesheet_link_tag "users_page"
+%div.balance
+  Your balance: #{current_user.balance}
+
+.users_info
+  %h1 Users
+
+  %div.inner.row
+    %div.section.col-sm.no-gutters
+      %div.inner-section.header= "Name:"
+      - @users.each do |user|
+        %div.inner-section= user.name + ", " + user.role
+    %div.section.col-sm.no-gutters
+      %div.inner-section.header= "Send money:"
+      - @users.each do |user|
+        %div.inner-section
+          - if user.id != @user.id
+            = form_tag(send_money_user_path(@user), method: :patch) do
+              = text_field_tag(:money, params[:money])
+              = hidden_field_tag(:getter_id, user.id)
+              = submit_tag ("Send"), class: "btn btn-primary"
+    %div.section.col-sm.no-gutters
+      %div.inner-section.header= "Transfer orders:"
+      - @users.each do |user|
+        %div.inner-section
+          - if user.id != @user.id
+            %a.class.inner-a= button_to 'Transfer', transfer_orders_user_path(current_user, getter_id: user.id),method: :patch, class: "btn btn-primary btn-sm"

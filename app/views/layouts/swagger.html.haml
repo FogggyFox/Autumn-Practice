@@ -1,0 +1,10 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title API docs
+    = javascript_include_tag 'swagger'
+    = stylesheet_link_tag    'swagger', media: 'all'
+  %body
+    .swagger-section
+      = yield

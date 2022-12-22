@@ -1,0 +1,122 @@
+.inner {
+    width: 98vw;
+    background-color: #00224d;
+    border-radius: 16px;
+    margin: 1vh 1vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: normal;
+    align-items: baseline
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #001b44;
+    margin: 0;
+    color: white;
+}
+
+.no-gutters {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+
+.section {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+
+}
+
+
+.inner-section {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border-bottom-color: #1b1b1b;
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    border-left-color: #2E2F30;
+    border-right: 1px solid;
+    border-right-color: #2E2F30;
+    padding: 20px;
+    height: 220px;
+}
+
+.header{
+    height: fit-content;
+}
+
+.address{
+    font-size: 14px;
+    line-height: normal;
+}
+
+.inner-section:nth-child(even) {
+    background-color: #020543;
+}
+
+.inner-section:nth-child(1) {
+    background-color: #031836;
+    font-weight: bold;
+    font-style: italic;
+}
+
+button{
+    font-size: small;
+    line-height: normal;
+    color: white;
+    font-weight: bolder;
+    background-color: #29078c;
+    border-color: #1f69c0;
+}
+
+input[type="submit" i] {
+    color: white;
+    background-color: #084298
+}
+
+input[type="text" i] {
+    color: black;
+    background-color: #427bcf;
+}
+
+.pagination {
+    --bs-pagination-color: #f8f9fa;
+    --bs-pagination-bg: #084298;
+    --bs-pagination-border-color: #141619;
+    --bs-pagination-active-bg: #427bcf;
+    --bs-pagination-active-border-color: #9f9f9f;
+    --bs-pagination-disabled-color: #e9ecef;
+    --bs-pagination-disabled-bg: #17407c;
+    --bs-pagination-disabled-border-color: #141619;
+}
+
+.btn{
+    padding: revert;
+    line-height: normal;
+    margin-right: 3px;
+}
+
+.btn-primary{
+    --bs-btn-bg: #084298;
+    --bs-btn-border-color: #4d6487;
+    --bs-btn-hover-bg: #427bcf;
+    --bs-btn-hover-border-color: #9f9f9f;
+}
+
+.word{
+    margin: 1px;
+}
+
+.comments{
+    display: flex;
+    flex-direction: column;
+    font-size: x-small;
+}

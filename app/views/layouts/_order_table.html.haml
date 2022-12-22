@@ -1,0 +1,36 @@
+%div.inner.row
+  %div.section.col-sm.no-gutters
+    %div.inner-section.header= "Name:"
+    - @orders.each do |order|
+      %div.inner-section= order.name
+  %div.section.col-sm.no-gutters
+    %div.inner-section.header= "Address:"
+    - @orders.each do |order|
+      %div.inner-section.address= order.raw_address
+  %div.section.col-sm.no-gutters
+    %div.inner-section.header= "Kladr code:"
+    - @orders.each do |order|
+      %div.inner-section= order.address_kladr
+  %div.section.col-sm.no-gutters
+    %div.inner-section.header= "Price:"
+    - @orders.each do |order|
+      %div.inner-section= order.price.to_s
+  %div.section.col-sm.no-gutters
+    %div.inner-section.header= "Status:"
+    - @orders.each do |order|
+      %div.inner-section= order.status
+  %div.section.col-sm.no-gutters
+    %div.inner-section.header= "Buttons"
+    - @orders.each do |order|
+      %div.inner-section
+        %a.class.inner-a= button_to 'Get in work', change_order_path(order, page: params[:page], user_id: @user.id, status: 'in work', search: params[:search]), class: "btn btn-primary btn-sm"
+        %a.class.inner-a= button_to 'Close', change_order_path(order, page: params[:page], user_id: @user.id, status: 'closed', search: params[:search]), class: "btn btn-primary btn-sm"
+  %div.section.col-sm.no-gutters
+    %div.inner-section.header= "Comments"
+    - @orders.each do |order|
+      %div.inner-section.comments
+        -@comments["number#{order.id}"].each do |comment|
+          %div.word
+            ="#{comment.body}"
+
+

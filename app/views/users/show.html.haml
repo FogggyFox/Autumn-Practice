@@ -1,0 +1,17 @@
+= stylesheet_link_tag "user_page"
+
+%div.balance
+  Your balance: #{current_user.balance}
+
+%div.user_info
+  - if user_signed_in?
+    %h1
+      Здравствуйте, #{current_user.name}
+    = button_to 'Выйти', destroy_user_session_path(), :method => :delete
+
+
+  %div
+    = link_to "Редактировать профиль", edit_user_registration_path(current_user)
+  %div
+    = link_to "Заказы", orders_path(user_id: @user.id, page: 1)
+
